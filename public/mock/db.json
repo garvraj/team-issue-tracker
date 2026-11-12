@@ -1,0 +1,1462 @@
+{
+  "users": [
+    {
+      "id": "u_alex",
+      "name": "Alex Morgan",
+      "email": "alex@example.com",
+      "role": "admin",
+      "avatarColor": "#4f6bed"
+    },
+    {
+      "id": "u_priya",
+      "name": "Priya Shah",
+      "email": "priya@example.com",
+      "role": "member",
+      "avatarColor": "#d6457a"
+    },
+    {
+      "id": "u_sam",
+      "name": "Sam Okafor",
+      "email": "sam@example.com",
+      "role": "member",
+      "avatarColor": "#2f9e5b"
+    },
+    {
+      "id": "u_lena",
+      "name": "Lena Fischer",
+      "email": "lena@example.com",
+      "role": "member",
+      "avatarColor": "#e08a1e"
+    },
+    {
+      "id": "u_diego",
+      "name": "Diego Ramos",
+      "email": "diego@example.com",
+      "role": "member",
+      "avatarColor": "#8a4fed"
+    },
+    {
+      "id": "u_mei",
+      "name": "Mei Tanaka",
+      "email": "mei@example.com",
+      "role": "member",
+      "avatarColor": "#1e9aa8"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p_web",
+      "key": "WEB",
+      "name": "Customer Web App",
+      "description": "The customer-facing web application: onboarding, dashboard, billing and settings.",
+      "memberIds": [
+        "u_alex",
+        "u_priya",
+        "u_sam",
+        "u_lena"
+      ],
+      "createdAt": "2026-08-02T09:00:00.000Z"
+    },
+    {
+      "id": "p_mob",
+      "key": "MOB",
+      "name": "Mobile App",
+      "description": "iOS and Android apps. Offline support and push notifications are the current focus.",
+      "memberIds": [
+        "u_alex",
+        "u_diego",
+        "u_mei"
+      ],
+      "createdAt": "2026-08-17T09:00:00.000Z"
+    },
+    {
+      "id": "p_ops",
+      "key": "OPS",
+      "name": "Platform & Infra",
+      "description": "CI/CD, observability, cost control and the internal developer platform.",
+      "memberIds": [
+        "u_alex",
+        "u_sam",
+        "u_diego"
+      ],
+      "createdAt": "2026-09-01T09:00:00.000Z"
+    }
+  ],
+  "labels": [
+    {
+      "id": "l_frontend",
+      "name": "frontend",
+      "color": "#4f6bed"
+    },
+    {
+      "id": "l_backend",
+      "name": "backend",
+      "color": "#8a4fed"
+    },
+    {
+      "id": "l_ux",
+      "name": "ux",
+      "color": "#d6457a"
+    },
+    {
+      "id": "l_perf",
+      "name": "performance",
+      "color": "#e08a1e"
+    },
+    {
+      "id": "l_security",
+      "name": "security",
+      "color": "#d64545"
+    },
+    {
+      "id": "l_a11y",
+      "name": "accessibility",
+      "color": "#1e9aa8"
+    },
+    {
+      "id": "l_docs",
+      "name": "docs",
+      "color": "#69707d"
+    },
+    {
+      "id": "l_debt",
+      "name": "tech debt",
+      "color": "#a07b3b"
+    }
+  ],
+  "issues": [
+    {
+      "id": "iss_web_1",
+      "projectId": "p_web",
+      "number": 1,
+      "title": "Password reset email links expire too early",
+      "description": "Users report that reset links stop working after ~5 minutes. The token TTL should be 60 minutes.\n\nSteps:\n1. Request a reset\n2. Wait 10 minutes\n3. Click the link → \"Invalid token\"",
+      "status": "in_progress",
+      "priority": "urgent",
+      "type": "bug",
+      "assigneeId": "u_sam",
+      "reporterId": "u_priya",
+      "labelIds": [
+        "l_backend",
+        "l_security"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-14",
+      "createdAt": "2026-08-22T09:00:00.000Z",
+      "updatedAt": "2026-08-25T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_2",
+      "projectId": "p_web",
+      "number": 2,
+      "title": "Redesign onboarding checklist",
+      "description": "Replace the static checklist with a progress card that tracks real completion state.",
+      "status": "todo",
+      "priority": "high",
+      "type": "feature",
+      "assigneeId": "u_priya",
+      "reporterId": "u_sam",
+      "labelIds": [
+        "l_frontend",
+        "l_ux"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-25",
+      "createdAt": "2026-08-24T09:00:00.000Z",
+      "updatedAt": "2026-08-28T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_3",
+      "projectId": "p_web",
+      "number": 3,
+      "title": "Dashboard charts slow with >1k rows",
+      "description": "Rendering freezes the main thread for ~2s. Consider virtualisation or downsampling.",
+      "status": "in_review",
+      "priority": "high",
+      "type": "bug",
+      "assigneeId": "u_lena",
+      "reporterId": "u_lena",
+      "labelIds": [
+        "l_frontend",
+        "l_perf"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-16",
+      "createdAt": "2026-08-26T09:00:00.000Z",
+      "updatedAt": "2026-08-31T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_4",
+      "projectId": "p_web",
+      "number": 4,
+      "title": "Add dark mode toggle to settings",
+      "description": "We follow the OS preference today; users want an explicit override.",
+      "status": "backlog",
+      "priority": "low",
+      "type": "feature",
+      "assigneeId": null,
+      "reporterId": "u_alex",
+      "labelIds": [
+        "l_frontend",
+        "l_ux"
+      ],
+      "order": 0,
+      "dueDate": null,
+      "createdAt": "2026-08-28T09:00:00.000Z",
+      "updatedAt": "2026-09-03T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_5",
+      "projectId": "p_web",
+      "number": 5,
+      "title": "Invoice PDF shows wrong currency symbol",
+      "description": "EUR invoices render \"$\". Locale comes from the browser instead of the account.",
+      "status": "todo",
+      "priority": "medium",
+      "type": "bug",
+      "assigneeId": "u_sam",
+      "reporterId": "u_priya",
+      "labelIds": [
+        "l_backend"
+      ],
+      "order": 1,
+      "dueDate": "2026-11-18",
+      "createdAt": "2026-08-30T09:00:00.000Z",
+      "updatedAt": "2026-09-06T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_6",
+      "projectId": "p_web",
+      "number": 6,
+      "title": "Keyboard navigation in billing table",
+      "description": "Rows are not focusable; screen reader users cannot reach row actions.",
+      "status": "backlog",
+      "priority": "medium",
+      "type": "task",
+      "assigneeId": null,
+      "reporterId": "u_sam",
+      "labelIds": [
+        "l_a11y",
+        "l_frontend"
+      ],
+      "order": 1,
+      "dueDate": null,
+      "createdAt": "2026-09-01T09:00:00.000Z",
+      "updatedAt": "2026-09-04T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_7",
+      "projectId": "p_web",
+      "number": 7,
+      "title": "Document public REST API rate limits",
+      "description": "Add a section to the developer docs describing limits and 429 handling.",
+      "status": "done",
+      "priority": "low",
+      "type": "task",
+      "assigneeId": "u_alex",
+      "reporterId": "u_lena",
+      "labelIds": [
+        "l_docs"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-06",
+      "createdAt": "2026-09-03T09:00:00.000Z",
+      "updatedAt": "2026-09-07T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_8",
+      "projectId": "p_web",
+      "number": 8,
+      "title": "Migrate settings page to new form components",
+      "description": "",
+      "status": "in_progress",
+      "priority": "medium",
+      "type": "task",
+      "assigneeId": "u_priya",
+      "reporterId": "u_alex",
+      "labelIds": [
+        "l_frontend",
+        "l_debt"
+      ],
+      "order": 1,
+      "dueDate": "2026-11-21",
+      "createdAt": "2026-09-05T09:00:00.000Z",
+      "updatedAt": "2026-09-10T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_9",
+      "projectId": "p_web",
+      "number": 9,
+      "title": "Session cookie missing SameSite attribute",
+      "description": "Set SameSite=Lax and Secure on the session cookie.",
+      "status": "done",
+      "priority": "urgent",
+      "type": "bug",
+      "assigneeId": "u_sam",
+      "reporterId": "u_priya",
+      "labelIds": [
+        "l_security",
+        "l_backend"
+      ],
+      "order": 1,
+      "dueDate": "2026-11-01",
+      "createdAt": "2026-09-07T09:00:00.000Z",
+      "updatedAt": "2026-09-13T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_10",
+      "projectId": "p_web",
+      "number": 10,
+      "title": "Empty state for projects with no data",
+      "description": "Show guidance and a primary action instead of an empty table.",
+      "status": "todo",
+      "priority": "low",
+      "type": "feature",
+      "assigneeId": "u_lena",
+      "reporterId": "u_sam",
+      "labelIds": [
+        "l_ux"
+      ],
+      "order": 2,
+      "dueDate": null,
+      "createdAt": "2026-09-09T09:00:00.000Z",
+      "updatedAt": "2026-09-16T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_11",
+      "projectId": "p_web",
+      "number": 11,
+      "title": "Search results ignore accented characters",
+      "description": "Searching \"cafe\" should match \"café\".",
+      "status": "backlog",
+      "priority": "medium",
+      "type": "bug",
+      "assigneeId": null,
+      "reporterId": "u_lena",
+      "labelIds": [
+        "l_backend"
+      ],
+      "order": 2,
+      "dueDate": null,
+      "createdAt": "2026-09-11T09:00:00.000Z",
+      "updatedAt": "2026-09-14T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_12",
+      "projectId": "p_web",
+      "number": 12,
+      "title": "Add audit log export (CSV)",
+      "description": "Admins need to export audit events for compliance reviews.",
+      "status": "backlog",
+      "priority": "high",
+      "type": "feature",
+      "assigneeId": "u_alex",
+      "reporterId": "u_alex",
+      "labelIds": [
+        "l_backend"
+      ],
+      "order": 3,
+      "dueDate": "2026-12-11",
+      "createdAt": "2026-09-13T09:00:00.000Z",
+      "updatedAt": "2026-09-17T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_13",
+      "projectId": "p_web",
+      "number": 13,
+      "title": "Focus ring missing on icon buttons",
+      "description": "",
+      "status": "done",
+      "priority": "medium",
+      "type": "bug",
+      "assigneeId": "u_lena",
+      "reporterId": "u_priya",
+      "labelIds": [
+        "l_a11y"
+      ],
+      "order": 2,
+      "dueDate": "2026-11-08",
+      "createdAt": "2026-09-15T09:00:00.000Z",
+      "updatedAt": "2026-09-20T14:00:00.000Z"
+    },
+    {
+      "id": "iss_web_14",
+      "projectId": "p_web",
+      "number": 14,
+      "title": "Remove legacy jQuery date picker",
+      "description": "Replace with the native date input across the app.",
+      "status": "in_review",
+      "priority": "low",
+      "type": "task",
+      "assigneeId": "u_priya",
+      "reporterId": "u_sam",
+      "labelIds": [
+        "l_debt",
+        "l_frontend"
+      ],
+      "order": 1,
+      "dueDate": "2026-11-10",
+      "createdAt": "2026-09-17T09:00:00.000Z",
+      "updatedAt": "2026-09-23T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_1",
+      "projectId": "p_mob",
+      "number": 1,
+      "title": "Offline queue loses edits after app restart",
+      "description": "Pending mutations are kept in memory only. Persist them to SQLite.",
+      "status": "in_progress",
+      "priority": "urgent",
+      "type": "bug",
+      "assigneeId": "u_diego",
+      "reporterId": "u_diego",
+      "labelIds": [
+        "l_backend"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-13",
+      "createdAt": "2026-08-22T09:00:00.000Z",
+      "updatedAt": "2026-08-25T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_2",
+      "projectId": "p_mob",
+      "number": 2,
+      "title": "Push notification opt-in screen",
+      "description": "Explain the value before triggering the OS permission prompt.",
+      "status": "todo",
+      "priority": "high",
+      "type": "feature",
+      "assigneeId": "u_mei",
+      "reporterId": "u_mei",
+      "labelIds": [
+        "l_ux"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-23",
+      "createdAt": "2026-08-24T09:00:00.000Z",
+      "updatedAt": "2026-08-28T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_3",
+      "projectId": "p_mob",
+      "number": 3,
+      "title": "Crash on Android 12 when rotating during upload",
+      "description": "Activity is recreated and the upload callback references a dead context.",
+      "status": "in_review",
+      "priority": "high",
+      "type": "bug",
+      "assigneeId": "u_diego",
+      "reporterId": "u_alex",
+      "labelIds": [],
+      "order": 0,
+      "dueDate": "2026-11-15",
+      "createdAt": "2026-08-26T09:00:00.000Z",
+      "updatedAt": "2026-08-31T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_4",
+      "projectId": "p_mob",
+      "number": 4,
+      "title": "Biometric login",
+      "description": "Face ID / fingerprint as an alternative to the password after first sign-in.",
+      "status": "backlog",
+      "priority": "medium",
+      "type": "feature",
+      "assigneeId": null,
+      "reporterId": "u_diego",
+      "labelIds": [
+        "l_security"
+      ],
+      "order": 0,
+      "dueDate": null,
+      "createdAt": "2026-08-28T09:00:00.000Z",
+      "updatedAt": "2026-09-03T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_5",
+      "projectId": "p_mob",
+      "number": 5,
+      "title": "Reduce cold start time below 2s",
+      "description": "Current p50 is 3.4s on mid-range Android devices.",
+      "status": "todo",
+      "priority": "medium",
+      "type": "task",
+      "assigneeId": "u_mei",
+      "reporterId": "u_mei",
+      "labelIds": [
+        "l_perf"
+      ],
+      "order": 1,
+      "dueDate": "2026-12-02",
+      "createdAt": "2026-08-30T09:00:00.000Z",
+      "updatedAt": "2026-09-06T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_6",
+      "projectId": "p_mob",
+      "number": 6,
+      "title": "Dynamic type support on iOS",
+      "description": "",
+      "status": "backlog",
+      "priority": "medium",
+      "type": "task",
+      "assigneeId": null,
+      "reporterId": "u_alex",
+      "labelIds": [
+        "l_a11y"
+      ],
+      "order": 1,
+      "dueDate": null,
+      "createdAt": "2026-09-01T09:00:00.000Z",
+      "updatedAt": "2026-09-04T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_7",
+      "projectId": "p_mob",
+      "number": 7,
+      "title": "Update app store screenshots",
+      "description": "",
+      "status": "done",
+      "priority": "low",
+      "type": "task",
+      "assigneeId": "u_mei",
+      "reporterId": "u_diego",
+      "labelIds": [
+        "l_docs"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-04",
+      "createdAt": "2026-09-03T09:00:00.000Z",
+      "updatedAt": "2026-09-07T14:00:00.000Z"
+    },
+    {
+      "id": "iss_mob_8",
+      "projectId": "p_mob",
+      "number": 8,
+      "title": "Sync conflict resolution UI",
+      "description": "When server and local edits conflict, let the user pick a version.",
+      "status": "backlog",
+      "priority": "high",
+      "type": "feature",
+      "assigneeId": "u_diego",
+      "reporterId": "u_mei",
+      "labelIds": [
+        "l_ux",
+        "l_backend"
+      ],
+      "order": 2,
+      "dueDate": "2026-12-16",
+      "createdAt": "2026-09-05T09:00:00.000Z",
+      "updatedAt": "2026-09-10T14:00:00.000Z"
+    },
+    {
+      "id": "iss_ops_1",
+      "projectId": "p_ops",
+      "number": 1,
+      "title": "CI pipeline takes 25 minutes",
+      "description": "Split the test job, cache dependencies, and run lint in parallel.",
+      "status": "in_progress",
+      "priority": "high",
+      "type": "task",
+      "assigneeId": "u_sam",
+      "reporterId": "u_sam",
+      "labelIds": [
+        "l_perf"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-17",
+      "createdAt": "2026-08-22T09:00:00.000Z",
+      "updatedAt": "2026-08-25T14:00:00.000Z"
+    },
+    {
+      "id": "iss_ops_2",
+      "projectId": "p_ops",
+      "number": 2,
+      "title": "Rotate database credentials automatically",
+      "description": "Credentials are static and shared. Move to short-lived secrets from the vault.",
+      "status": "todo",
+      "priority": "urgent",
+      "type": "task",
+      "assigneeId": "u_alex",
+      "reporterId": "u_diego",
+      "labelIds": [
+        "l_security"
+      ],
+      "order": 0,
+      "dueDate": "2026-11-15",
+      "createdAt": "2026-08-24T09:00:00.000Z",
+      "updatedAt": "2026-08-28T14:00:00.000Z"
+    },
+    {
+      "id": "iss_ops_3",
+      "projectId": "p_ops",
+      "number": 3,
+      "title": "Alert fatigue: tune 5xx alert thresholds",
+      "description": "On-call got 40 pages last week; most were transient.",
+      "status": "backlog",
+      "priority": "medium",
+      "type": "task",
+      "assigneeId": null,
+      "reporterId": "u_alex",
+      "labelIds": [],
+      "order": 0,
+      "dueDate": null,
+      "createdAt": "2026-08-26T09:00:00.000Z",
+      "updatedAt": "2026-08-31T14:00:00.000Z"
+    },
+    {
+      "id": "iss_ops_4",
+      "projectId": "p_ops",
+      "number": 4,
+      "title": "Staging environment out of disk space",
+      "description": "Log volume filled up. Added retention policy.",
+      "status": "done",
+      "priority": "urgent",
+      "type": "bug",
+      "assigneeId": "u_diego",
+      "reporterId": "u_sam",
+      "labelIds": [],
+      "order": 0,
+      "dueDate": "2026-11-09",
+      "createdAt": "2026-08-28T09:00:00.000Z",
+      "updatedAt": "2026-09-03T14:00:00.000Z"
+    },
+    {
+      "id": "iss_ops_5",
+      "projectId": "p_ops",
+      "number": 5,
+      "title": "Write runbook for failed deploy rollback",
+      "description": "",
+      "status": "todo",
+      "priority": "medium",
+      "type": "task",
+      "assigneeId": "u_diego",
+      "reporterId": "u_diego",
+      "labelIds": [
+        "l_docs"
+      ],
+      "order": 1,
+      "dueDate": "2026-11-26",
+      "createdAt": "2026-08-30T09:00:00.000Z",
+      "updatedAt": "2026-09-06T14:00:00.000Z"
+    },
+    {
+      "id": "iss_ops_6",
+      "projectId": "p_ops",
+      "number": 6,
+      "title": "Tag cloud resources by team for cost reports",
+      "description": "",
+      "status": "backlog",
+      "priority": "low",
+      "type": "task",
+      "assigneeId": null,
+      "reporterId": "u_alex",
+      "labelIds": [
+        "l_debt"
+      ],
+      "order": 1,
+      "dueDate": null,
+      "createdAt": "2026-09-01T09:00:00.000Z",
+      "updatedAt": "2026-09-04T14:00:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "cmt_1",
+      "issueId": "iss_web_2",
+      "authorId": "u_priya",
+      "body": "Picking this up today.",
+      "createdAt": "2026-08-25T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_2",
+      "issueId": "iss_web_3",
+      "authorId": "u_sam",
+      "body": "Opened a draft PR, would appreciate an early look.",
+      "createdAt": "2026-08-27T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_3",
+      "issueId": "iss_web_3",
+      "authorId": "u_lena",
+      "body": "Design mock is in the shared folder, let me know if anything is unclear.",
+      "createdAt": "2026-08-28T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_4",
+      "issueId": "iss_web_5",
+      "authorId": "u_alex",
+      "body": "Confirmed fixed on staging.",
+      "createdAt": "2026-08-31T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_5",
+      "issueId": "iss_web_6",
+      "authorId": "u_priya",
+      "body": "Design mock is in the shared folder, let me know if anything is unclear.",
+      "createdAt": "2026-09-02T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_6",
+      "issueId": "iss_web_6",
+      "authorId": "u_sam",
+      "body": "I can reproduce this on the latest build.",
+      "createdAt": "2026-09-03T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_7",
+      "issueId": "iss_web_8",
+      "authorId": "u_lena",
+      "body": "Added a test that covers the edge case.",
+      "createdAt": "2026-09-06T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_8",
+      "issueId": "iss_web_9",
+      "authorId": "u_alex",
+      "body": "I can reproduce this on the latest build.",
+      "createdAt": "2026-09-08T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_9",
+      "issueId": "iss_web_9",
+      "authorId": "u_priya",
+      "body": "Should we split this into two issues? The second part is bigger than it looks.",
+      "createdAt": "2026-09-09T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_10",
+      "issueId": "iss_web_11",
+      "authorId": "u_sam",
+      "body": "Opened a draft PR, would appreciate an early look.",
+      "createdAt": "2026-09-12T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_11",
+      "issueId": "iss_web_12",
+      "authorId": "u_lena",
+      "body": "Should we split this into two issues? The second part is bigger than it looks.",
+      "createdAt": "2026-09-14T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_12",
+      "issueId": "iss_web_12",
+      "authorId": "u_alex",
+      "body": "This is blocking the release, bumping priority.",
+      "createdAt": "2026-09-15T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_13",
+      "issueId": "iss_web_14",
+      "authorId": "u_priya",
+      "body": "Design mock is in the shared folder, let me know if anything is unclear.",
+      "createdAt": "2026-09-18T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_14",
+      "issueId": "iss_mob_2",
+      "authorId": "u_diego",
+      "body": "Picking this up today.",
+      "createdAt": "2026-08-25T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_15",
+      "issueId": "iss_mob_3",
+      "authorId": "u_mei",
+      "body": "Opened a draft PR, would appreciate an early look.",
+      "createdAt": "2026-08-27T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_16",
+      "issueId": "iss_mob_3",
+      "authorId": "u_alex",
+      "body": "Design mock is in the shared folder, let me know if anything is unclear.",
+      "createdAt": "2026-08-28T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_17",
+      "issueId": "iss_mob_5",
+      "authorId": "u_diego",
+      "body": "Confirmed fixed on staging.",
+      "createdAt": "2026-08-31T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_18",
+      "issueId": "iss_mob_6",
+      "authorId": "u_mei",
+      "body": "Design mock is in the shared folder, let me know if anything is unclear.",
+      "createdAt": "2026-09-02T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_19",
+      "issueId": "iss_mob_6",
+      "authorId": "u_alex",
+      "body": "I can reproduce this on the latest build.",
+      "createdAt": "2026-09-03T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_20",
+      "issueId": "iss_mob_8",
+      "authorId": "u_diego",
+      "body": "Added a test that covers the edge case.",
+      "createdAt": "2026-09-06T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_21",
+      "issueId": "iss_ops_2",
+      "authorId": "u_sam",
+      "body": "Picking this up today.",
+      "createdAt": "2026-08-25T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_22",
+      "issueId": "iss_ops_3",
+      "authorId": "u_diego",
+      "body": "Opened a draft PR, would appreciate an early look.",
+      "createdAt": "2026-08-27T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_23",
+      "issueId": "iss_ops_3",
+      "authorId": "u_alex",
+      "body": "Design mock is in the shared folder, let me know if anything is unclear.",
+      "createdAt": "2026-08-28T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_24",
+      "issueId": "iss_ops_5",
+      "authorId": "u_sam",
+      "body": "Confirmed fixed on staging.",
+      "createdAt": "2026-08-31T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_25",
+      "issueId": "iss_ops_6",
+      "authorId": "u_diego",
+      "body": "Design mock is in the shared folder, let me know if anything is unclear.",
+      "createdAt": "2026-09-02T13:00:00.000Z"
+    },
+    {
+      "id": "cmt_26",
+      "issueId": "iss_ops_6",
+      "authorId": "u_alex",
+      "body": "I can reproduce this on the latest build.",
+      "createdAt": "2026-09-03T13:00:00.000Z"
+    }
+  ],
+  "activity": [
+    {
+      "id": "act_1",
+      "issueId": "iss_web_1",
+      "actorId": "u_priya",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-22T09:00:00.000Z"
+    },
+    {
+      "id": "act_2",
+      "issueId": "iss_web_1",
+      "actorId": "u_priya",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_sam",
+      "at": "2026-08-22T10:00:00.000Z"
+    },
+    {
+      "id": "act_3",
+      "issueId": "iss_web_1",
+      "actorId": "u_sam",
+      "kind": "status",
+      "from": "backlog",
+      "to": "in_progress",
+      "at": "2026-08-23T11:00:00.000Z"
+    },
+    {
+      "id": "act_4",
+      "issueId": "iss_web_2",
+      "actorId": "u_sam",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-24T09:00:00.000Z"
+    },
+    {
+      "id": "act_5",
+      "issueId": "iss_web_2",
+      "actorId": "u_sam",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_priya",
+      "at": "2026-08-24T10:00:00.000Z"
+    },
+    {
+      "id": "act_6",
+      "issueId": "iss_web_2",
+      "actorId": "u_priya",
+      "kind": "status",
+      "from": "backlog",
+      "to": "todo",
+      "at": "2026-08-25T11:00:00.000Z"
+    },
+    {
+      "id": "act_7",
+      "issueId": "iss_web_3",
+      "actorId": "u_lena",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-26T09:00:00.000Z"
+    },
+    {
+      "id": "act_8",
+      "issueId": "iss_web_3",
+      "actorId": "u_lena",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_lena",
+      "at": "2026-08-26T10:00:00.000Z"
+    },
+    {
+      "id": "act_9",
+      "issueId": "iss_web_3",
+      "actorId": "u_lena",
+      "kind": "status",
+      "from": "backlog",
+      "to": "in_review",
+      "at": "2026-08-27T11:00:00.000Z"
+    },
+    {
+      "id": "act_10",
+      "issueId": "iss_web_4",
+      "actorId": "u_alex",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-28T09:00:00.000Z"
+    },
+    {
+      "id": "act_11",
+      "issueId": "iss_web_5",
+      "actorId": "u_priya",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-30T09:00:00.000Z"
+    },
+    {
+      "id": "act_12",
+      "issueId": "iss_web_5",
+      "actorId": "u_priya",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_sam",
+      "at": "2026-08-30T10:00:00.000Z"
+    },
+    {
+      "id": "act_13",
+      "issueId": "iss_web_5",
+      "actorId": "u_sam",
+      "kind": "status",
+      "from": "backlog",
+      "to": "todo",
+      "at": "2026-08-31T11:00:00.000Z"
+    },
+    {
+      "id": "act_14",
+      "issueId": "iss_web_6",
+      "actorId": "u_sam",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "act_15",
+      "issueId": "iss_web_7",
+      "actorId": "u_lena",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-03T09:00:00.000Z"
+    },
+    {
+      "id": "act_16",
+      "issueId": "iss_web_7",
+      "actorId": "u_lena",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_alex",
+      "at": "2026-09-03T10:00:00.000Z"
+    },
+    {
+      "id": "act_17",
+      "issueId": "iss_web_7",
+      "actorId": "u_alex",
+      "kind": "status",
+      "from": "backlog",
+      "to": "done",
+      "at": "2026-09-04T11:00:00.000Z"
+    },
+    {
+      "id": "act_18",
+      "issueId": "iss_web_8",
+      "actorId": "u_alex",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-05T09:00:00.000Z"
+    },
+    {
+      "id": "act_19",
+      "issueId": "iss_web_8",
+      "actorId": "u_alex",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_priya",
+      "at": "2026-09-05T10:00:00.000Z"
+    },
+    {
+      "id": "act_20",
+      "issueId": "iss_web_8",
+      "actorId": "u_priya",
+      "kind": "status",
+      "from": "backlog",
+      "to": "in_progress",
+      "at": "2026-09-06T11:00:00.000Z"
+    },
+    {
+      "id": "act_21",
+      "issueId": "iss_web_9",
+      "actorId": "u_priya",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-07T09:00:00.000Z"
+    },
+    {
+      "id": "act_22",
+      "issueId": "iss_web_9",
+      "actorId": "u_priya",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_sam",
+      "at": "2026-09-07T10:00:00.000Z"
+    },
+    {
+      "id": "act_23",
+      "issueId": "iss_web_9",
+      "actorId": "u_sam",
+      "kind": "status",
+      "from": "backlog",
+      "to": "done",
+      "at": "2026-09-08T11:00:00.000Z"
+    },
+    {
+      "id": "act_24",
+      "issueId": "iss_web_10",
+      "actorId": "u_sam",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-09T09:00:00.000Z"
+    },
+    {
+      "id": "act_25",
+      "issueId": "iss_web_10",
+      "actorId": "u_sam",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_lena",
+      "at": "2026-09-09T10:00:00.000Z"
+    },
+    {
+      "id": "act_26",
+      "issueId": "iss_web_10",
+      "actorId": "u_lena",
+      "kind": "status",
+      "from": "backlog",
+      "to": "todo",
+      "at": "2026-09-10T11:00:00.000Z"
+    },
+    {
+      "id": "act_27",
+      "issueId": "iss_web_11",
+      "actorId": "u_lena",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-11T09:00:00.000Z"
+    },
+    {
+      "id": "act_28",
+      "issueId": "iss_web_12",
+      "actorId": "u_alex",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-13T09:00:00.000Z"
+    },
+    {
+      "id": "act_29",
+      "issueId": "iss_web_12",
+      "actorId": "u_alex",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_alex",
+      "at": "2026-09-13T10:00:00.000Z"
+    },
+    {
+      "id": "act_30",
+      "issueId": "iss_web_13",
+      "actorId": "u_priya",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-15T09:00:00.000Z"
+    },
+    {
+      "id": "act_31",
+      "issueId": "iss_web_13",
+      "actorId": "u_priya",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_lena",
+      "at": "2026-09-15T10:00:00.000Z"
+    },
+    {
+      "id": "act_32",
+      "issueId": "iss_web_13",
+      "actorId": "u_lena",
+      "kind": "status",
+      "from": "backlog",
+      "to": "done",
+      "at": "2026-09-16T11:00:00.000Z"
+    },
+    {
+      "id": "act_33",
+      "issueId": "iss_web_14",
+      "actorId": "u_sam",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-17T09:00:00.000Z"
+    },
+    {
+      "id": "act_34",
+      "issueId": "iss_web_14",
+      "actorId": "u_sam",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_priya",
+      "at": "2026-09-17T10:00:00.000Z"
+    },
+    {
+      "id": "act_35",
+      "issueId": "iss_web_14",
+      "actorId": "u_priya",
+      "kind": "status",
+      "from": "backlog",
+      "to": "in_review",
+      "at": "2026-09-18T11:00:00.000Z"
+    },
+    {
+      "id": "act_36",
+      "issueId": "iss_mob_1",
+      "actorId": "u_diego",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-22T09:00:00.000Z"
+    },
+    {
+      "id": "act_37",
+      "issueId": "iss_mob_1",
+      "actorId": "u_diego",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_diego",
+      "at": "2026-08-22T10:00:00.000Z"
+    },
+    {
+      "id": "act_38",
+      "issueId": "iss_mob_1",
+      "actorId": "u_diego",
+      "kind": "status",
+      "from": "backlog",
+      "to": "in_progress",
+      "at": "2026-08-23T11:00:00.000Z"
+    },
+    {
+      "id": "act_39",
+      "issueId": "iss_mob_2",
+      "actorId": "u_mei",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-24T09:00:00.000Z"
+    },
+    {
+      "id": "act_40",
+      "issueId": "iss_mob_2",
+      "actorId": "u_mei",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_mei",
+      "at": "2026-08-24T10:00:00.000Z"
+    },
+    {
+      "id": "act_41",
+      "issueId": "iss_mob_2",
+      "actorId": "u_mei",
+      "kind": "status",
+      "from": "backlog",
+      "to": "todo",
+      "at": "2026-08-25T11:00:00.000Z"
+    },
+    {
+      "id": "act_42",
+      "issueId": "iss_mob_3",
+      "actorId": "u_alex",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-26T09:00:00.000Z"
+    },
+    {
+      "id": "act_43",
+      "issueId": "iss_mob_3",
+      "actorId": "u_alex",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_diego",
+      "at": "2026-08-26T10:00:00.000Z"
+    },
+    {
+      "id": "act_44",
+      "issueId": "iss_mob_3",
+      "actorId": "u_diego",
+      "kind": "status",
+      "from": "backlog",
+      "to": "in_review",
+      "at": "2026-08-27T11:00:00.000Z"
+    },
+    {
+      "id": "act_45",
+      "issueId": "iss_mob_4",
+      "actorId": "u_diego",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-28T09:00:00.000Z"
+    },
+    {
+      "id": "act_46",
+      "issueId": "iss_mob_5",
+      "actorId": "u_mei",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-30T09:00:00.000Z"
+    },
+    {
+      "id": "act_47",
+      "issueId": "iss_mob_5",
+      "actorId": "u_mei",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_mei",
+      "at": "2026-08-30T10:00:00.000Z"
+    },
+    {
+      "id": "act_48",
+      "issueId": "iss_mob_5",
+      "actorId": "u_mei",
+      "kind": "status",
+      "from": "backlog",
+      "to": "todo",
+      "at": "2026-08-31T11:00:00.000Z"
+    },
+    {
+      "id": "act_49",
+      "issueId": "iss_mob_6",
+      "actorId": "u_alex",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "act_50",
+      "issueId": "iss_mob_7",
+      "actorId": "u_diego",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-03T09:00:00.000Z"
+    },
+    {
+      "id": "act_51",
+      "issueId": "iss_mob_7",
+      "actorId": "u_diego",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_mei",
+      "at": "2026-09-03T10:00:00.000Z"
+    },
+    {
+      "id": "act_52",
+      "issueId": "iss_mob_7",
+      "actorId": "u_mei",
+      "kind": "status",
+      "from": "backlog",
+      "to": "done",
+      "at": "2026-09-04T11:00:00.000Z"
+    },
+    {
+      "id": "act_53",
+      "issueId": "iss_mob_8",
+      "actorId": "u_mei",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-05T09:00:00.000Z"
+    },
+    {
+      "id": "act_54",
+      "issueId": "iss_mob_8",
+      "actorId": "u_mei",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_diego",
+      "at": "2026-09-05T10:00:00.000Z"
+    },
+    {
+      "id": "act_55",
+      "issueId": "iss_ops_1",
+      "actorId": "u_sam",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-22T09:00:00.000Z"
+    },
+    {
+      "id": "act_56",
+      "issueId": "iss_ops_1",
+      "actorId": "u_sam",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_sam",
+      "at": "2026-08-22T10:00:00.000Z"
+    },
+    {
+      "id": "act_57",
+      "issueId": "iss_ops_1",
+      "actorId": "u_sam",
+      "kind": "status",
+      "from": "backlog",
+      "to": "in_progress",
+      "at": "2026-08-23T11:00:00.000Z"
+    },
+    {
+      "id": "act_58",
+      "issueId": "iss_ops_2",
+      "actorId": "u_diego",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-24T09:00:00.000Z"
+    },
+    {
+      "id": "act_59",
+      "issueId": "iss_ops_2",
+      "actorId": "u_diego",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_alex",
+      "at": "2026-08-24T10:00:00.000Z"
+    },
+    {
+      "id": "act_60",
+      "issueId": "iss_ops_2",
+      "actorId": "u_alex",
+      "kind": "status",
+      "from": "backlog",
+      "to": "todo",
+      "at": "2026-08-25T11:00:00.000Z"
+    },
+    {
+      "id": "act_61",
+      "issueId": "iss_ops_3",
+      "actorId": "u_alex",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-26T09:00:00.000Z"
+    },
+    {
+      "id": "act_62",
+      "issueId": "iss_ops_4",
+      "actorId": "u_sam",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-28T09:00:00.000Z"
+    },
+    {
+      "id": "act_63",
+      "issueId": "iss_ops_4",
+      "actorId": "u_sam",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_diego",
+      "at": "2026-08-28T10:00:00.000Z"
+    },
+    {
+      "id": "act_64",
+      "issueId": "iss_ops_4",
+      "actorId": "u_diego",
+      "kind": "status",
+      "from": "backlog",
+      "to": "done",
+      "at": "2026-08-29T11:00:00.000Z"
+    },
+    {
+      "id": "act_65",
+      "issueId": "iss_ops_5",
+      "actorId": "u_diego",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-08-30T09:00:00.000Z"
+    },
+    {
+      "id": "act_66",
+      "issueId": "iss_ops_5",
+      "actorId": "u_diego",
+      "kind": "assignee",
+      "from": null,
+      "to": "u_diego",
+      "at": "2026-08-30T10:00:00.000Z"
+    },
+    {
+      "id": "act_67",
+      "issueId": "iss_ops_5",
+      "actorId": "u_diego",
+      "kind": "status",
+      "from": "backlog",
+      "to": "todo",
+      "at": "2026-08-31T11:00:00.000Z"
+    },
+    {
+      "id": "act_68",
+      "issueId": "iss_ops_6",
+      "actorId": "u_alex",
+      "kind": "created",
+      "from": null,
+      "to": null,
+      "at": "2026-09-01T09:00:00.000Z"
+    }
+  ]
+}
